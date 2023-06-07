@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--========== BOX ICONS ==========-->
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+  <!--========== Bootstrap ==========-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+  <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' rel='stylesheet'>
+  <link rel='stylesheet'
+    href='https://d33wubrfki0l68.cloudfront.net/css/68818763319cf667ed141dc03e654e8db3424772/assets/css/animate.min.css' />
+
+  <!--========== CSS ==========-->
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <link rel="shortcut icon" href="./assets/img/1669037928.ico" type="image/x-icon">
+
+  <title>Hoshin Academy</title>
+</head>
+
+<body>
+  <!--========== SCROLL TOP ==========-->
+  <a href="#" class="scrolltop" id="scroll-top">
+    <i class='bx bx-up-arrow-alt scrolltop__icon'></i>
+  </a>
+
+  <!--========== HEADER ==========-->
+  <header class="l-header" id="header">
+    <nav class="nav bd-container">
+      <a href="#"><img class="nav__logo" src="./assets/img/hoshin-blackLogo.png" alt=""></a>
+
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item fst-italic fs-5"><a href="#home" class="nav__link active-link">Home</a></li>
+          <li class="nav__item fst-italic fs-5"><a href="#share" class="nav__link">Reseñas</a></li>
+          <li class="nav__item fst-italic fs-5"><a href="#decoration" class="nav__link">Cursos</a></li>
+          <li class="nav__item fst-italic fs-5"><a href="#accessory" class="nav__link">Asesoria</a></li>
+
+          <li class="nav__item">
+            <div id="app">
+              <div class="d-flex">
+
+
+                <!-- <a href="#" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                  aria-controls="offcanvasRight"><button class="btn btn-light" style="margin-right: 1rem ; ">LogIn
+                  </button></a>
+                <a href="#" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"
+                  aria-controls="offcanvasRight" style="color: #EED297;"> <button class="btn btn-light"
+                    style="margin-right: 1rem ; "> Sign Up </button></a> -->
+
+                <!--------- offcanvas ---------->
+
+                <!-- <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                  aria-labelledby="offcanvasRightLabel">
+                  <div class="offcanvas-header">
+
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  </div>
+                  <div class="offcanvas-body">
+                    <div class="d-lg-flex half">
+                      <div class="container">
+                        <div class="row align-items-center justify-content-center">
+                          <div>
+                            <div class="mb-4">
+                              <h3>Sign In</h3>
+                            </div>
+                            <form action="#" method="post" @submit.prevent="ingreso">
+                              <div class="form-group first">
+                                <label for="username">Email</label>
+                                <input v-model="email" type="email" class="form-control" id="exampleInputEmail1"
+                                  aria-describedby="emailHelp">
+                              </div>
+                              <div class="form-group last mb-3">
+                                <label for="contraseña">Password</label>
+                                <input v-model="contraseña" type="password" class="form-control"
+                                  id="exampleInputPassword1">
+                              </div>
+                              <div class="d-flex mb-5 align-items-center">
+                                <label class="control control--checkbox mb-0"><span class="caption">Remember me</span>
+                                  <input type="checkbox" checked="checked" />
+                                  <div class="control__indicator"></div>
+                                </label>
+                              </div>
+                              <div class="d-flex justify-content-center">
+                                <input type="submit" value="Log In" class="btn btn-block btn-primary">
+                                <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"
+                                  aria-controls="offcanvasRight"><input type="" value="Register"
+                                    class="btn btn-block btn-danger"></a>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+              <!-- <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header">
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <div class="d-lg-flex half">
+                    <div class="container">
+                      <div class="row align-items-center justify-content-center">
+                        <div>
+                          <div class="mb-4">
+                            <h3>Register</h3>
+                          </div>
+                          <form action="#" method="post" @submit.prevent="registro">
+                            <div class="form-group first">
+                              <label for="username">First Name</label>
+                              <input v-model="primerNombre" type="text" class="form-control" id="exampleInputPassword1"
+                                required>
+                            </div>
+                            <div class="form-group last">
+                              <label for="username">Last Name</label>
+                              <input v-model="apellido" type="text" class="form-control" id="exampleInputPassword1"
+                                required>
+                            </div>
+                            <div class="form-group first">
+                              <label for="username">Email</label>
+                              <input v-model="email" type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" required>
+                            </div>
+                            <div class="form-group last mb-3">
+                              <label for="contraseña">Password</label>
+                              <input v-model="contraseña" type="password" class="form-control"
+                                id="exampleInputPassword1" required>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                              <input type="submit" value="Register" class="btn btn-block btn-danger">
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+          </li>
+
+          <li><i class='bx bx-toggle-left change-theme' id="theme-button"></i></li>
+        </ul>
+      </div>
+
+      <div class="nav__toggle" id="nav-toggle">
+        <i class='bx bx-grid-alt'></i>
+      </div>
+
+    </nav>
+  </header>
+
+  <main class="l-main">
+    <!--========== HOME ==========-->
+
+    <section class="home" id="home">
+
+      <div class="home__container  bd-grid">
+
+
+        <div class="home__data">
+          <div>
+            <div class="home__datatitle">
+              <img src="./assets/img/brandmark-design (1).png" alt="">
+              <div>
+                <h1 class="home__title">HOSHIN</h1>
+                <h2><span class="home__subtitle typed"></span></h2>
+              </div>
+            </div>
+
+            <div class="home__desc">
+              <p class="home__description">Aprenda a programar creando ideas para el mundo real</p>
+              <a href="#decoration" class="button">Empecemos</a>
+            </div>
+          </div>
+        </div>
+
+    </section>
+
+    <div class="d-flex flex-wrap justify-content-around align-items-center">
+      <div class="home__contador">
+        <p class="home__description">¡Somos de confianza!</p>
+        <p class="fs-3 fst-italic">Muchas personas se encuentran satisfechas</p>
+        <p class="fs-3 fst-italic">con nuestros servicios a tal punto</p>
+        <p class="fs-3 fst-italic">de siempre elegirnos para programar</p>
+      </div>
+      <div class="count__students d-flex align-items-center">
+        <div>
+          <p>
+            Personas que han confiado en nosotros
+          </p>
+        </div>
+        <div class="contador">
+          <div class="color_fondo" id="fondo_color">
+
+          </div>
+          <div class="numero" id="numero">
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    </div>
+
+
+
+    <div class="video d-flex flex-wrap justify-content-around align-items-center ">
+
+      <video class="VideoEstilo" autoplay loop muted playsinline controls>
+        <source src="./assets/img/video1.mp4" type="video/mp4">
+      </video>
+      <div class=" d-flex align-items-center ">
+        <div class=" contenedorVideo">
+          <p class="textVideo fst-italic fw-semibold">Nuestros cursos se basan en dar la mayor capacitacion posible</p>
+          <p class=" textVideo fst-italic fw-semibold">para que nuestros alumnos salgan al mundo laboral con todas</p>
+          <p class=" textVideo fst-italic fw-semibold">las habilidades y herramientas.</p>
+          <p class="textVideo fst-italic fw-semibold">Ofrecemos flexibilidad total en nuestras cursadas , ya que</p>
+          <p class="textVideo fst-italic fw-semibold">nuestro objetivo siempre es el mejor , tanto para los inscriptos,
+          </p>
+          <p class="textVideo fst-italic fw-semibold">como para nosotros. De esta manera te invitamos a que veas nuestro
+          </p>
+          <p class="textVideo fst-italic fw-semibold">contenido y te instruyas en lo mejor del mundo de la programacion
+          </p>
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+    <!--========== SHARE ==========-->
+    <section class="share section bd-container" id="share">
+      <div class="share__container bd-grid">
+        <div class="share__img">
+          <div class="login-container">
+            <div class="profile-img">
+              <img src="./assets/img/paola.jpeg" alt="">
+            </div>
+            <h1 class="ms-5 fs-2">
+              Paola Carnaghi
+            </h1>
+            <div class="description mt-2 fst-italic fw-semibold">
+              "Realmente he aprendido mucho sobre cómo concretar ideas y generar el pensamiento lógico necesario para cumplir con los requerimientos del mercado. Gracias a Hoshin Academy puedo ofrecer mi trabajo de manera freelance."
+            </div>
+          </div>
+        </div>
+        <div class="share__img paola">
+          <div class="login-container">
+            <div class="profile-img">
+              <img src="./assets/img/Francisco.jpeg" alt="">
+            </div>
+            <h1 class="ms-5 fs-2">
+              Francisco Otero
+            </h1>
+            <div class="description mt-5 fst-italic fw-semibold">
+              "¡Lo que estaba buscando para poder aprender JAVA! La recomiendo mucho a cualquiera que busque una forma de desarrollarse desde la teoría y la práctica."</div>
+          </div>
+        </div>
+<!-- 
+        <div class="share__img">
+          <div class="login-container">
+            <div class="profile-img">
+              <img src="./assets/img/profile3.jpg" alt="">
+            </div>
+            <h1 class="ms-5 fs-2">
+              Rodrigo Ballo
+            </h1>
+            <div class="description mt-5 fst-italic fw-semibold">
+              "En lo personal he aprendido Phyton y me ha ido de 10, pude insertar muchas cosas del curso para mi empleo
+              de hoy en dia. Eso es algo que destaco, se aprende rapido"
+            </div>
+          </div>
+        </div>
+
+        <div class="share__img">
+          <div class="login-container">
+            <div class="profile-img">
+              <img src="./assets/img/profile3.jpg" alt="">
+            </div>
+            <h1 class="ms-5 fs-2">
+              Leandro Santoro
+            </h1>
+            <div class="description mt-5 fst-italic fw-semibold">
+              "En lo personal he aprendido Phyton y me ha ido de 10, pude insertar muchas cosas del curso para mi empleo
+              de hoy en dia. Eso es algo que destaco, se aprende rapido"
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </section>
+
+    <!--========== DECORATION ==========-->
+    <section class="decoration section bd-container" id="decoration">
+      <h2 class="section-title mb-5 fst-italic">¡Elija su recorrido de aprendizaje!
+      </h2>
+      <div class="decoration__container bd-grid">
+        <div class="decoration__data">
+          <div>
+            <img src="./assets/img/logo_java.png" alt="" class="decoration__img">
+          </div>
+          <div>
+            <h3 class="decoration__title">JAVA HoshinAcademy</h3>
+            <p class="fst-italic fw-bold mt-3">Horarios de Cursada:</p>
+            <p class="fst-italic fw-semibold mt-3">Lunes: De 8hs a 12hs</p>
+            <p class="fst-italic fw-semibold mt-3">Miercoles: De 10hs a 14hs</p>
+            <div class="d-flex flex-column">
+              <p><a href="#" data-toggle="modal" data-target="#javamodal1"
+                  class="btn animated fadeIn btn-cta btn-cstm-light fst-italic mt-4">Contenido del curso</a></p>
+            </div>
+            <div class="d-flex flex-column" style="margin-top: -40px;">
+              <p><a href="#" data-target="#javamodal1"
+                  class="btn animated fadeIn btn-cta1 btn-cstm-light fst-italic mt-4">¡Comprar ahora!</a></p>
+            </div>
+          </div>
+
+
+        </div>
+        <!-- Modal -->
+        <div class="modal fade auto-off" id="javamodal1" tabindex="-1" role="dialog" aria-labelledby="demoModal"
+          aria-hidden="true">
+          <div class="modal-dialog animated zoomInDown modal-dialog-centered" role="document">
+            <div class="modal-content">
+
+              <div class="container-fluid">
+                <button type="button" class="close button-modal" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+
+                <div class="containers">
+                  <div class="card">
+                    <div class="card__image-container">
+                      <img class="card__image" src="./assets/img/Java-Code.png" alt="">
+                    </div>
+
+                    <svg class="card__svg" viewBox="0 0 800 500">
+
+                      <path
+                        d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500"
+                        stroke="transparent" fill="#333" />
+                      <path class="card__line"
+                        d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400"
+                        stroke="pink" stroke-width="3" fill="transparent" />
+                    </svg>
+
+                    <div class="card__content">
+                      <h3 class="card__title text-center fst-italic ">CONTENIDO DEL CURSO</h3>
+                      <div class="container__">
+                        <div class="card__">
+                          <h4>Conceptos</h4>
+                        </div>
+                      </div>
+                      <div class="container__">
+                        <div class="card__">
+                          <h4>Rendimiento y recursión</h4>
+                        </div>
+                      </div>
+                      <div class="container__">
+                        <div class="card__">
+                          <h4>IDE, archivos Java y sintaxis</h4>
+                        </div>
+                      </div>
+                      <div class="container__">
+                        <div class="card__">
+                          <h4>Funciones</h4>
+                        </div>
+                      </div>
+                      <div class="container__">
+                        <div class="card__">
+                          <h4>Clases, objetos, herencia y polimorfismo</h4>
+                        </div>
+                      </div>
+                      <div class="container__">
+                        <div class="card__">
+                          <h4>Tipo de datos avanzados</h4>
+                        </div>
+                      </div>
+                      <div class="container__">
+                        <div class="card__">
+                          <h4>Eventos, XML y JSON</h4>
+                        </div>
+                      </div>
+                      <div class="container__">
+                        <div>
+                          <h5 class="fst-italic d-flex justify-content-center fw-semibold ">Horas de cursada: 50hs</h4>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- End Modal -->
+
+        <div class="decoration__data">
+          <div>
+            <img src="./assets/img/logo_java.png" alt="" class="decoration__img">
+          </div>
+          <div>
+            <h3 class="decoration__title">JAVA 2 HoshinAcademy</h3>
+            <p class="fst-italic fw-bold mt-3">Horarios de Cursada:</p>
+            <p class="fst-italic fw-semibold mt-3">Martes: De 12hs a 16hs</p>
+            <p class="fst-italic fw-semibold mt-3">Viernes: De 14hs a 18hs</p>
+            <div class="d-flex flex-column">
+              <p><a href="#" data-toggle="modal" data-target="#javamodal"
+                  class="btn animated fadeIn btn-cta btn-cstm-light fst-italic mt-4">Contenido del curso</a></p>
+
+            </div>
+            <div class="d-flex flex-column" style="margin-top: -40px;">
+              <p><a href="#" data-target="#javamodal1"
+                  class="btn animated fadeIn btn-cta1 btn-cstm-light fst-italic mt-4">¡Comprar ahora!</a></p>
+            </div>
+          </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade auto-off" id="javamodal" tabindex="-1" role="dialog" aria-labelledby="demoModal"
+          aria-hidden="true">
+          <div class="modal-dialog animated zoomInDown modal-dialog-centered" role="document">
+            <div class="modal-content">
+
+              <div class="container-fluid">
+                <button type="button" class="close button-modal" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+
+                <div class="containers">
+                  <div class="card">
+                    <div class="card__image-container">
+                      <img class="card__image" src="./assets/img/Java-Code.png" alt="">
+                    </div>
+
+                    <svg class="card__svg" viewBox="0 0 800 500">
+
+                      <path
+                        d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500"
+                        stroke="transparent" fill="#333" />
+                      <path class="card__line"
+                        d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400"
+                        stroke="pink" stroke-width="3" fill="transparent" />
+                    </svg>
+
+                    <div class="card__content">
+                      <h3 class="card__title text-center fst-italic">CONTENIDO DEL CURSO</h3>
+                      <div class="container__">
+                        <div class="card__">
+                          <h4>Introducción</h4>
+                        </div>
+                      </div>
+                      <div class="container__">
+                        <div class="card__">
+                          <h4>Rendimiento y recursión</h4>
+                        </div>
+                      </div>
+                      <div class="container__">
+                        <div class="card__">
+                          <h4>Servicios REST</h4>
+                        </div>
+                      </div>
+                      <div class="container__">
+                        <div class="card__">
+                          <h4>Postman</h4>
+                        </div>
+                      </div>
+                      <div class="container__">
+                        <div class="card__">
+                          <h4>Patrones</h4>
+                        </div>
+                      </div>
+                      <div class="container__">
+                        <div class="card__">
+                          <h4>Funciones</h4>
+                        </div>
+                      </div>
+                      <div class="container__">
+                        <div class="card__">
+                          <h4>Creación de proyectos</h4>
+                        </div>
+                      </div>
+                      <div class="container__">
+                        <div>
+                          <h5 class="fst-italic d-flex justify-content-center fw-semibold ">Horas de cursada: 64hs</h4>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Modal -->
+
+        <div class="decoration__data">
+          <div>
+            <img src="./assets/img/logo_python.png" alt="" class="decoration__img">
+          </div>
+          <div>
+            <h3 class="decoration__title mt-3">Python 1 HoshinAcademy</h3>
+            <p class="fst-italic fw-bold mt-3">Horarios de Cursada:</p>
+            <p class="fst-italic fw-semibold mt-3">Lunes: De 16hs a 20hs</p>
+            <p class="fst-italic fw-semibold mt-3">Jueves: De 15hs a 19hs</p>
+            <p><a href="#" data-toggle="modal" data-target="#demoModalph"
+                class="btn animated fadeIn btn-cta btn-cstm-light fst-italic mt-4">Contenido del curso</a></p>
+            <div class="d-flex flex-column" style="margin-top: -40px;">
+              <p><a href="#" data-target="#javamodal1"
+                  class="btn animated fadeIn btn-cta1 btn-cstm-light fst-italic mt-4">¡Comprar ahora!</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade auto-off" id="demoModalph" tabindex="-1" role="dialog" aria-labelledby="demoModal"
+          aria-hidden="true">
+          <div class="modal-dialog animated zoomInDown modal-dialog-centered" role="document">
+            <div class="modal-content">
+
+              <div class="container-fluid">
+                <button type="button" class="close button-modal" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+
+                <div class="containers">
+                  <div class="card">
+                    <div class="card__image-container">
+                      <img class="card__image" src="./assets/img/python-code.jpg" alt="">
+                    </div>
+
+                    <svg class="card__svg" viewBox="0 0 800 500">
+
+                      <path
+                        d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500"
+                        stroke="transparent" fill="#333" />
+                      <path class="card__line"
+                        d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400"
+                        stroke="pink" stroke-width="3" fill="transparent" />
+                    </svg>
+
+                    <div class="card__content">
+                      <h3 class="card__title text-center fst-italic">CONTENIDO DEL CURSO</h3>
+                      <div class="container__">
+                        <div class="card__">
+                          <h4>Introducción a Python</h4>
+                        </div>
+                      </div>
+                      <div class="container__">
+                        <div class="card__">
+                          <h4>El intérprete de Python</h4>
+                        </div>
+                      </div>
+                      <div class="container__">
+                        <div class="card__">
+                          <h4>Introducción a los tipos de objetos</h4>
+                        </div>
+                      </div>
+                      <div class="container__">
+                        <div class="card__">
+                          <h4>Funciones</h4>
+                        </div>
+                      </div>
+                      <div class="container__">
+                        <div class="card__">
+                          <h4>Clases y objetos</h4>
+                        </div>
+                      </div>
+                      <div class="container__">
+                        <div class="card__">
+                          <h4>Módulos</h4>
+                        </div>
+                      </div>
+                      <div class="container__">
+                        <div class="card__">
+                          <h4>Bases de datos</h4>
+                        </div>
+                        <div class="container__">
+                          <div>
+                            <h5 class="fst-italic d-flex justify-content-center fw-semibold ">Horas de cursada: 50hs</h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Modal -->
+
+        <div class="decoration__data">
+          <div>
+            <img src="./assets/img/logo_python.png" alt="" class="decoration__img">
+          </div>
+          <div>
+            <h3 class="decoration__title mt-3">Python 2 HoshinAcademy</h3>
+            <p class="fst-italic fw-bold mt-3">Horarios de Cursada:</p>
+            <p class="fst-italic fw-semibold mt-3">Martes: De 18hs a 22hs</p>
+            <p class="fst-italic fw-semibold mt-3">Jueves: De 13hs a 17hs</p>
+            <p><a href="#" data-toggle="modal" data-target="#pythonAv"
+                class="btn animated fadeIn btn-cta btn-cstm-light fst-italic mt-4">Contenido del curso</a></p>
+            <div class="d-flex flex-column" style="margin-top: -40px;">
+              <p><a href="#" data-target="#javamodal1"
+                  class="btn animated fadeIn btn-cta1 btn-cstm-light fst-italic mt-4">¡Comprar ahora!</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade auto-off" id="pythonAv" tabindex="-1" role="dialog" aria-labelledby="demoModal"
+          aria-hidden="true">
+          <div class="modal-dialog animated zoomInDown modal-dialog-centered" role="document">
+            <div class="modal-content">
+
+              <div class="container-fluid">
+                <button type="button" class="close button-modal" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+
+                <div class="containers">
+                  <div class="card">
+                    <div class="card__image-container">
+                      <img class="card__image" src="./assets/img/python-code.jpg" alt="">
+                    </div>
+
+                    <svg class="card__svg" viewBox="0 0 800 500">
+
+                      <path
+                        d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500"
+                        stroke="transparent" fill="#333" />
+                      <path class="card__line"
+                        d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400"
+                        stroke="pink" stroke-width="3" fill="transparent" />
+                    </svg>
+
+                    <div class="card__content">
+                      <h3 class="card__title text-cente fst-italicr">CONTENIDO DEL CURSO</h3>
+                      <div class="container__">
+                        <div class="card__">
+                          <h4>Patrones de desarrollo</h4>
+                        </div>
+                      </div>
+                      <div class="container__">
+                        <div class="card__">
+                          <h4>Socket</h4>
+                        </div>
+                      </div>
+                      <div class="container__">
+                        <div class="card__">
+                          <h4>Asíncrono – términos y teoría</h4>
+                        </div>
+                      </div>
+                      <div class="container__">
+                        <div class="card__">
+                          <h4>Asyncio</h4>
+                        </div>
+                        <div class="container__">
+                          <div>
+                            <h5 class="fst-italic d-flex justify-content-center fw-semibold ">Horas de cursada: 64hs</h4>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Modal -->
+      </div>
+    </section>
+
+    <!--========== ACCESSORIES ==========-->
+    <section class="accessory section bd-container" id="accessory">
+      <h2 class="section-title">¡Proximamente!</h2>
+      <h3 class="section-title">Merchandising</h3>
+
+      <div class="accessory__container bd-grid" id="accessory1">
+        <div class="container__product">
+          <div class="card__product">
+            <div class="imgBx">
+              <img src="./assets/img/hoshinremera2.png">
+            </div>
+            <div class="contentBx">
+              <h2>Hoodie Hoshin</h2>
+              <div class="size">
+                <h3>Talle :</h3>
+                <span>S</span>
+                <span>M</span>
+                <span>L</span>
+                <span>XL</span>
+              </div>
+
+              <a href="#accessory1">Proximamente</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="container__product">
+          <div class="card__product">
+            <div class="imgBx">
+              <img src="./assets/img/hoshinremera3.png">
+            </div>
+            <div class="contentBx">
+              <h2>T-Shirt V </h2>
+              <div class="size">
+                <h3>Talle :</h3>
+                <span>S</span>
+                <span>M</span>
+                <span>L</span>
+                <span>XL</span>
+              </div>
+
+              <a href="#accessory1">Proximamente</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="container__product">
+          <div class="card__product">
+            <div class="imgBx">
+              <img src="./assets/img/hoshinremera4.png">
+            </div>
+            <div class="contentBx">
+              <h2>Classic T-Shirt</h2>
+              <div class="size">
+                <h3>Talle :</h3>
+                <span>S</span>
+                <span>M</span>
+                <span>L</span>
+                <span>XL</span>
+              </div>
+
+              <a href="#accessory1">Proximamente</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="container__product d-flex">
+          <div class="card__product">
+            <div class="imgBx">
+              <img src="./assets/img/hoshinremera5.png">
+            </div>
+            <div class="contentBx">
+              <h2>Long T-Shirt</h2>
+              <div class="size">
+                <h3>Talle :</h3>
+                <span>S</span>
+                <span>M</span>
+                <span>L</span>
+                <span>XL</span>
+              </div>
+
+              <a href="#accessory1">Proximamente</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="accessory__content">
+          <img src="./assets/img/hoshinremera2.png" alt="" class="accessory__img">
+          <a href="#" class="button accessory__button"><i class='bx bx-heart'></i></a>
+        </div>
+
+        <div class="accessory__content">
+          <img src="./assets/img/hoshinremera3.png" alt="" class="accessory__img">
+          <a href="#" class="button accessory__button"><i class='bx bx-heart'></i></a>
+        </div>
+
+        <div class="accessory__content">
+          <img src="./assets/img/hoshinremera4.png" alt="" class="accessory__img">
+          <a href="#" class="button accessory__button"><i class='bx bx-heart'></i></a>
+        </div>
+
+        <div class="accessory__content">
+          <img src="./assets/img/hoshinremera5.png" alt="" class="accessory__img">
+          <a href="#" class="button accessory__button"><i class='bx bx-heart'></i></a>
+        </div> -->
+
+
+      </div>
+    </section>
+
+
+    <section class="accessory section bd-container" id="accessory">
+      <h2 class="section-title">¡Proximamente!</h2>
+      <h3 class="section-title">Proximamente encontranos en Android e iOS</h3>
+
+      <div class="imgBx">
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+              <img src="./assets/img/app.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="./assets/img/app3.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="./assets/img/app4.png" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <div>
+          <p class="fst-italic fw-bold">Muy pronto vamos a estar presentando nuestra app para dar facilidad a todos
+            nuestros estudiantes. Queremos comodidad absoluta para vos , y para nosotros.
+            En este 2022 queremos llenarte de sorpresas , asi que esta atento a nuevas novedades siempre
+          </p>
+        </div>
+      </div>
+
+
+    </section>
+
+    <section class="send section">
+      <div class="send__container bd-container bd-grid">
+        <div class="send__content">
+          <h2 class="section-title-center send__title text-white ">¡Compre su curso ahora!</h2>
+          <p class="send__description fst-italic">En Hoshin Academy nos ocupamos al 100% en que vos aprendas y puedas
+            salir con todas las herramientas posibles al mercado laboral</p>
+          <form action="">
+            <div class="send__direction">
+              <input type="text" placeholder="Ingrese su Email" class="send__input">
+              <a href="#" class="button">Registrarse</a>
+            </div>
+          </form>
+          <!-- 
+          <form action="/create-checkout-session" method="POST">
+            <button type="submit">Checkout</button>
+          </form> -->
+
+        </div>
+
+        <div class="send__img">
+          <img class="imgCurso" src="assets/img/lenguajes-de-programacion-mas-usados-1-1024x683.jpg" alt="">
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <!--========== FOOTER ==========-->
+  <footer class="footer section">
+    <div class="footer__container bd-container bd-grid">
+      <div class="footer__content">
+        <h3 class="footer__title">
+          <a href="#" class="footer__logo fs-5 fst-italic fw-semibold">Hoshin Academy</a>
+        </h3>
+        <p class="footer__description">En Hoshin Academy nos ocupamos de que</p>
+        <p>se aprenda al 100%</p>
+      </div>
+
+      <div class="footer__content">
+        <h3 class="footer__title fs-5 fst-italic fw-semibold">Nuestros servicios</h3>
+        <ul>
+          <li><a href="#decoration" class="footer__link">JAVA </a></li>
+          <li><a href="#decoration" class="footer__link">JAVA 2</a></li>
+          <li><a href="#decoration" class="footer__link">Python</a></li>
+          <li><a href="#decoration" class="footer__link">Python 2</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__content">
+        <h3 class="footer__title fs-5 fst-italic fw-semibold">Sobre nosotros</h3>
+        <ul>
+          <li><a href="#" data-toggle="modal" data-target="#javamodal2" class="footer__link">Nuestra empresa</a></li>
+          <li><a href="#" class="footer__link">Nuestro equipo</a></li>
+          <li><a href="#decoration" class="footer__link">Carreras disponibles</a></li>
+        </ul>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade auto-off" id="javamodal2" tabindex="-1" role="dialog" aria-labelledby="demoModal"
+        aria-hidden="true">
+        <div class="modal-dialog animated zoomInDown modal-dialog-centered" role="document">
+          <div class="modal-content">
+
+            <div class="container-fluid">
+              <button type="button" class="close button-modal" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+
+              <div class="containers">
+                <div class="cards">
+                  <div class="card__image-container">
+                    <img class="card__image" src="./assets/img/brandmark-design.png" alt="">
+                  </div>
+
+
+                  <div class="card__content1">
+                    <h3 class="card__title1  fst-italic ">Bienvenidos</h3>
+                    <div class="container__1">
+                      <div class="card__1">
+                        <h4>Hoshin se fundó con esta premisa simple: el conocimiento nos hace seres humanos más felices
+                          y saludables.</h4>
+                      </div>
+                    </div>
+                    <div class="container__1">
+                      <div class="card__1">
+                        <p>Comenzamos Hoshin en un espacio de oficina prestado en un pequeño edificio sin ascensor en el
+                          barrio Vicente Lopez. La idea había surgido años antes cuando quisimos comenzar estudios
+                          superiores en informatica. Nuestro profesor de la universidad, nos recomendó algunos temas a
+                          perfeccionar. No sabía que aprovechar el amor de nuestra profesión se convertiría en la
+                          pequeña pero poderosa empresa que es Hoshin Academy.</p>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- End Modal -->
+
+      <div class="footer__content">
+        <h3 class="footer__title">Nuestras redes sociales</h3>
+        <a href="https://www.facebook.com/profile.php?id=100088235554236" class="footer__social"><i class='bx bxl-facebook-circle '></i></a>
+        <a href="https://www.linkedin.com/in/hoshinacademy/" class="footer__social"><i class='bx bxl-linkedin'></i></a>
+        <a href="https://www.instagram.com/hoshinacademy/" class="footer__social"><i
+            class='bx bxl-instagram-alt'></i></a>
+      </div>
+    </div>
+
+    <p class="footer__copy">&#169; 2022 Hoshin Academy. Todos los derechos reservados</p>
+  </footer>
+
+  <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
+  <script type='text/javascript' src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js'></script>
+  <script type='text/javascript'></script>
+  <!--========== SCROLL REVEAL ==========-->
+  <script src="https://unpkg.com/scrollreveal"></script>
+
+  <!--========== AUTO TYPING ==========-->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+
+  <!--========== Bootstrap ==========-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+
+  <!--========== AXIOS ==========-->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <!--========== VUE ==========-->
+  <script src="https://unpkg.com/vue@3"></script>
+
+  <!--========== MAIN JS ==========-->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/login.js"></script>
+
+  <!-- ALERTAS -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>>
+
+
+</body>
+
+</html>
